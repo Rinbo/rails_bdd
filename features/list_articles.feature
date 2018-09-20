@@ -10,7 +10,7 @@ Feature: List articles on the landing page
       | Learn Rails 5        | Build awesome rails applications |
   
   Scenario: View list of articles on the landing page
-    Given I visit the site
+    Given I visit the landing page
     Then I should see "A breaking news item"
     And I should see "Some really breaking action"
     And I should see "Learn Rails 5"

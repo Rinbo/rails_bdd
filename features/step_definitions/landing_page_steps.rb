@@ -4,7 +4,7 @@ Given("the following articles exists") do |table|
   end
 end
 
-When("I visit the site") do
+When("I visit the landing page") do
   visit root_path
 end
 
