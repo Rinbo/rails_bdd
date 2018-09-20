@@ -1,0 +1,10 @@
+<% unless @article.errors.any? %>
+  <p>Article was successfully created.</p>
+<%end%>
+
+<h1><%= @article.title %></h1>
+<p><%= @article.content%></p>
+
+
+<div><%= link_to "Home", root_path %></div>
+<div><%= link_to "New Article" , new_article_path %></div>
