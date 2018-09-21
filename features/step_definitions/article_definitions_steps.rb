@@ -26,6 +26,6 @@ end
 
 Then("I should be on {string} page") do |article_title|
   title = Article.find_by(title: article_title)
-  expect(current_url).to eq article_path(title)
+  expect(current_url).to eq article_url(title)
 end
 
