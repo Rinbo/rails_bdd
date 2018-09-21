@@ -1,10 +1,13 @@
+<div>
+  <%= link_to "New Article", new_article_path, id: "new_article" %><br>
+</div>
+
 <% @articles.each do |article| %>
-  <h2><%= article.title %></h2>
+  <h2><%= link_to article.title, article_path(article) %></h2>
   <p><%= article.content %></p>
   <hr>
 <% end %>
 
-<div><%= link_to "New Article", new_article_path, id: "new_article" %></div>
 
 
 
