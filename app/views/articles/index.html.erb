@@ -1,11 +1,15 @@
-<div>
+<div class="navbar">
   <%= link_to "New Article", new_article_path, id: "new_article" %><br>
 </div>
+<h1>News</h1>
 
 <% @articles.each do |article| %>
-  <h2><%= link_to article.title, article_path(article) %></h2>
-  <p><%= article.content %></p>
-  <hr>
+  <div class="<%= article.id.odd? ? 'odd' : 'even' %>">
+    <h2><%= link_to article.title, article_path(article) %></h2>
+    <p><%= article.content %></p>
+    <p><%= link_to "Comments (#{article.comments.count})", article_path(article) %></p>  
+    <hr>
+  </div>
 <% end %>
 
 

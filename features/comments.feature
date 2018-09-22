@@ -16,5 +16,14 @@ Feature: Comment on articless
   
   Scenario: View existing comment on and article
     Given I visit the landing page
-    Then I should see "A breaking news item"
-    And I should see "Nice Read"
+    And I click "A breaking news item" link
+    Then I should see "Nice read"
+
+  Scenario: View existing comment on and article
+    Given I visit the landing page
+    When I click "A breaking news item" link
+    And I fill in "Name" with "Rudolf"
+    And I fill in "Email" with "Rudolf@example.com"
+    And I fill in "Body" with "This was a nice comment"
+    And I click "Create Comment" button
+    Then I should see "Comment was successfully created."

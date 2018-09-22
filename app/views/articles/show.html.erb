@@ -2,17 +2,25 @@
 
 <h1><%= @article.title %></h1>
 <p><%= @article.content%></p>
+<div>  
+  <p><strong>Comments:</strong></p>
+  <% @article.comments.each do |comment| %>
+  <p>
+  <%= mail_to comment.email, comment.name %>:
+  <%= comment.body %>
+  </p>
+  <hr>
+  <% end %>
+</div>
 
-h2>Add a comment:</h2>
+<h2>Add a comment:</h2>
 <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
   <p>
-    <%= form.label :name %><br>
+    <%= form.label :name %>
     <%= form.text_field :name %>
-    <%= form.label :email %><br>
+    <%= form.label :email %>
     <%= form.text_field :email %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
+    <%= form.label :body %>
     <%= form.text_area :body %>
   </p>
   <p>
@@ -20,6 +28,6 @@ h2>Add a comment:</h2>
   </p>
 <% end %>
 
-<div><%= link_to "Edit article", edit_article_path(@article) %></div><br>
-<div><%= link_to "Home", root_path %></div>
-<div><%= link_to "New Article" , new_article_path %></div>
+<div><%= link_to "Edit article", edit_article_path(@article) %></div>
+<div><%= link_to "New Article" , new_article_path %></div><br>
+<div><strong><%= link_to "Home", root_path %></strong></div>
