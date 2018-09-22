@@ -1,4 +1,4 @@
-# News README
+# Article Publication Site README
 ## Week 4 AUT Challenge @ Craft Academy
 #### 2018-09-22
 #### By Robin Börjesson And Shirmen Chen

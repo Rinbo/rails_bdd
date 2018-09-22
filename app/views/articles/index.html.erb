@@ -1,7 +1,7 @@
 <div class="navbar">
   <%= link_to "New Article", new_article_path, id: "new_article" %><br>
 </div>
-<h1>News</h1>
+<h1>Published Articles</h1>
 
 <% @articles.each do |article| %>
   <div class="<%= article.id.odd? ? 'odd' : 'even' %>">
