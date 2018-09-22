@@ -3,6 +3,23 @@
 <h1><%= @article.title %></h1>
 <p><%= @article.content%></p>
 
+h2>Add a comment:</h2>
+<%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
 <div><%= link_to "Edit article", edit_article_path(@article) %></div><br>
 <div><%= link_to "Home", root_path %></div>
 <div><%= link_to "New Article" , new_article_path %></div>
