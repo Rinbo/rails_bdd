@@ -4,6 +4,13 @@ Given("the following articles exists") do |table|
   end
 end
 
+Given("the following comment exist for {string}") do |article_title, table|
+  article = Article.find_by(title: article_title)
+    table.hashes.each do |comment_hash|
+        create(:comment, ticket_hash.merge(article: article))
+    end
+end
+
 When("I visit the landing page") do
   visit root_path
 end
