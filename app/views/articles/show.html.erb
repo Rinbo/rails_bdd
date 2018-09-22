@@ -6,7 +6,7 @@
   <p><strong>Comments:</strong></p>
   <% @article.comments.each do |comment| %>
   <p>
-  <%= mail_to comment.email, comment.name %>:
+  <%= comment.email.empty? ? comment.name : mail_to(comment.email, comment.name) %>:
   <%= comment.body %>
   </p>
   <hr>
