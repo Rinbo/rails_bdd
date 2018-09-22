@@ -10,7 +10,7 @@ Feature: Comment on articless
       | Learn Rails 5        | Build awesome rails applications |
 
   And the following comment exist for "A breaking news item"
-      | comment   | name   | email              |
+      | body      | name   | email              |
       | Nice read | Snorre | snorre@example.com |
       
   

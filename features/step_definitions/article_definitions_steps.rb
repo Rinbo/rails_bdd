@@ -7,7 +7,7 @@ end
 Given("the following comment exist for {string}") do |article_title, table|
   article = Article.find_by(title: article_title)
     table.hashes.each do |comment_hash|
-        create(:comment, ticket_hash.merge(article: article))
+        article.comments.create(comment_hash)
     end
 end
 
