@@ -14,12 +14,12 @@ Feature: Comment on articless
       | Nice read | Snorre | snorre@example.com |
       
   
-  Scenario: View existing comment on and article
+  Scenario: View existing comment on article
     Given I visit the landing page
     And I click "A breaking news item" link
     Then I should see "Nice read"
 
-  Scenario: View existing comment on and article
+  Scenario: Add comment to existing article
     Given I visit the landing page
     When I click "A breaking news item" link
     And I fill in "Name" with "Rudolf"
@@ -27,3 +27,4 @@ Feature: Comment on articless
     And I fill in "Body" with "This was a nice comment"
     And I click "Create Comment" button
     Then I should see "Comment was successfully created."
+  
