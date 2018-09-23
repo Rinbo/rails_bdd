@@ -6,6 +6,14 @@ class CommentsController < ApplicationController
     flash[:notice] = "Comment was successfully created."
     redirect_to article_path(@article)
   end
+
+  def destroy
+    @article = Article.find(params[:article_id])
+    @comment = @article.comments.find(params[:id])
+    @comment.destroy
+    flash[:notice] = "Comment was successfully deleted."
+    redirect_to article_path(@article)
+  end
  
   private
     def comment_params

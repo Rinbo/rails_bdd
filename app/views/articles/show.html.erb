@@ -5,11 +5,15 @@
 <div>  
   <p><strong>Comments:</strong></p>
   <% @article.comments.each do |comment| %>
-  <p>
-  <%= comment.email.empty? ? comment.name : mail_to(comment.email, comment.name) %>:
-  <%= comment.body %>
-  </p>
-  <hr>
+  <div class="comment">
+    <div>
+    <%= comment.email.empty? ? comment.name : mail_to(comment.email, comment.name) %>:
+    <%= comment.body %>
+    </div>
+    <%= link_to "Delete", [comment.article, comment], method: :delete, data: {confirm: 'Are you sure?'},
+    class: 'delete' %> 
+    <hr>
+  </div>
   <% end %>
 </div>
 

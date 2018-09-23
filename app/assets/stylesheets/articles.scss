@@ -13,8 +13,19 @@ label, input, textarea {
 }
 
 .navbar {
-  text-align: right;
+  text-align: right;  
 }
+
+.comment {
+  min-width: 600px;
+  
+  .delete {
+    text-align:right;    
+    display: block;
+    
+  }
+}
+
 
 .odd {
   background-color: lightcyan;
