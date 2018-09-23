@@ -28,6 +28,9 @@
   </p>
 <% end %>
 
-<div><%= link_to "Edit article", edit_article_path(@article) %></div>
+<div>
+  <%= link_to "Edit article", edit_article_path(@article) %> | 
+  <%= link_to "Delete article", article_path(@article), method: :delete, data: {confirm: 'Confirm delete action'}  %>
+</div>
 <div><%= link_to "New Article" , new_article_path %></div><br>
 <div><strong><%= link_to "Home", root_path %></strong></div>

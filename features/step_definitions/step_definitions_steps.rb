@@ -36,3 +36,8 @@ Then("I should be on {string} page") do |article_title|
   expect(current_url).to eq article_url(title)
 end
 
+Given("I accept popup alert") do
+  page.driver.browser.switch_to.alert.accept
+end
+
+
