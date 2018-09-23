@@ -17,7 +17,7 @@ Create and migrate database:
 ```
 rails db:create db:migrate:
 ```
-run test suite to see that everything works:
+run test suite to see that everything works. Note, you have to pass in username (robin) and password (Mypassword) when running the delete feature test. A browser will open up and automatically do the rest of the feature tests but passing in the credentials has to be done manually for now.
 ```
 cucumber
 ```
@@ -33,6 +33,7 @@ Ruby version and dependencies are listed in the Gemfile
 #### How it works
 
 - On the landing page you can view published articles
-- From here you can also follow the link to publish your own article
+- From here you can also follow the link to publish your own article (authentication required)
 - Each article also lists how many comments that article has. To read comments or make your own, click the comment link at the bottom each article
+- Editing and deleting articles and comments requries authentication
 
