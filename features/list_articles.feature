@@ -4,6 +4,7 @@ Feature: List articles on the landing page
   I would like to see a list of all articles
 
   Background:
+  Given I perform basic authentication as "robin" with "Mypassword"
   Given the following articles exists
       | title                | content                          |
       | A breaking news item | Some really breaking action      |

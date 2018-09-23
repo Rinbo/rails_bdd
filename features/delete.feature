@@ -4,6 +4,7 @@ Feature: Delete articles and comments
   I would like to be able to delete my article
 
   Background:
+  #Given I perform basic authentication as "robin" with "Mypassword"
   Given the following articles exists
       | title                | content                          |
       | A breaking news item | Some really breaking action      |
@@ -12,7 +13,7 @@ Feature: Delete articles and comments
   And the following comment exist for "A breaking news item"
       | body      | name   | email              |
       | Nice read | Snorre | snorre@example.com |
-  Given I visit the landing page
+  And I visit the landing page
 
     @javascript
     Scenario: Successfully delete an article

@@ -4,6 +4,7 @@ Feature: Comment on articless
   I would like to be able to add a comment to that article
 
   Background:
+  Given I perform basic authentication as "robin" with "Mypassword"
   Given the following articles exists
       | title                | content                          |
       | A breaking news item | Some really breaking action      |
